@@ -1,7 +1,12 @@
 import {Router} from 'express'
-import {getDataAudit}from '../controllers/audit.controller'
+import {getDataAudit, getDataAuditCD, getDatabases}from '../controllers/audit.controller'
 
 const router = Router()
 
-router.get ('/integridad/:base', getDataAudit)
+router.get ('/integridadSD/:base', getDataAudit)
+
+router.get('/integridadCD/:base', getDataAuditCD)
+
+router.get('/integridad/dbs', getDatabases)
 export default router
+
