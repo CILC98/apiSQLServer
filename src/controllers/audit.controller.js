@@ -22,3 +22,10 @@ export const getDatabases = async (req,res)=>{
    console.log(result);
    res.json(result.recordset)
 }
+
+export const getRelacionentidades = async (req,res)=>{
+   const pool = await getConnection(req.params.base);
+   const result = await pool.request().query(queries.getRelacionesEntidades(req.params.base))
+   console.log(result);
+   res.json(result.recordset)
+}
